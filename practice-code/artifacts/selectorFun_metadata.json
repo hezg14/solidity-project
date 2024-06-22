@@ -1,0 +1,231 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "Log",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"name": "SelectorEvent",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "callWithSignature",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "param1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "param2",
+						"type": "bool"
+					}
+				],
+				"name": "elementaryParamSelector",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "selectorWithElementaryParam",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[3]",
+						"name": "param1",
+						"type": "uint256[3]"
+					}
+				],
+				"name": "fixedSizeParamSelector",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "selectorWithFixedSizeParam",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract DemoContract",
+						"name": "demo",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "uid",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "name",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SelectorFun.User",
+						"name": "user",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "count",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "enum SelectorFun.School",
+						"name": "mySchool",
+						"type": "uint8"
+					}
+				],
+				"name": "mappingParamSelector",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "selectorWithMappingParam",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "mintSelector",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "mSelector",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "param1",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string",
+						"name": "param2",
+						"type": "string"
+					}
+				],
+				"name": "nonFixedSizeParamSelector",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "selectorWithNonFixedSizeParam",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nonParamSelector",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "selectorWithNonParam",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"selector.sol": "SelectorFun"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"selector.sol": {
+			"keccak256": "0x4c411b996cc2b24e2fc83dc71e92392f65c891a954d75ec070d21e53a0b5fadd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6ff4c0e7527dab007bf82ca74cff87b2e0a5eb2dc76d84a25a17b843b5e8c3ae",
+				"dweb:/ipfs/QmcAwPU2xsgzCFQCVYrit4MW3Yu4Q9NZYdpnFtPNiuc49U"
+			]
+		}
+	},
+	"version": 1
+}
