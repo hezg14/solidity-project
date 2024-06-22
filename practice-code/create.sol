@@ -46,3 +46,28 @@ contract PairFactory{
 
     // Pair pair = new Pair();
 }
+
+
+//由于用create1创建的合约地址会变，因为创建地址不会变，但是nonce会随时间而改变，所以用CREATE创建的合约地址不好预测
+// CREATE2的目的是为了让合约地址独立于未来的事件，无论发生什么变化，都可以把合约部署到事先计算好的地址上；
+// CREATE2由4部分组成：新地址 = hash("0xFF",创建者地址, salt, bytecode)，创建者使用 CREATE2 和提供的 salt 部署给定的合约bytecode，它将存储在 新地址 中。
+// 用法：Contract x = new Contract{salt: _salt, value: _value}(params)
+
+contract Pair2 {
+    address public factory; // 工厂合约地址
+    address public token0; // 代币1
+    address public token1; // 代币2
+
+    constructor() payable {
+        // 将factory赋值为工厂地址
+        factory = msg.sender;
+    }
+    // 在Pair2合约被创建时被工厂合约调用一次，将token0、token1更新为币对中两种代币的地址；
+    function initialize(address _token0, address _token1) external {
+        require(msg.sender == factory, 'UniswapV2: FORBIDDEN');
+        token0 = _token0;
+        token1 = _token1;
+    }
+}
+
+// 使用场景：交易所为新用户预留创建钱包合约地址，Router中可以通过tokenA,tokenB计算出pair2的地址，不需要再执行一次Factory.getPair(tokenA, tokenB)的跨合约调用；
